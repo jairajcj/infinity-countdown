@@ -64,24 +64,41 @@ body {
     transform: scale(1.05);
 }
 
-/* Fallback Logo Styles */
+/* Main Text Logo Styles */
 .fallback-logo {
-    display: none;
-    font-size: 5rem;
+    display: block;
+    /* Show by default */
+    font-size: 6rem;
     font-weight: 900;
-    letter-spacing: -2px;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+    animation: floating 3s ease-in-out infinite;
 }
 
 .infinity-text {
-    background: linear-gradient(to right, #ffffff, var(--primary-teal));
+    background: linear-gradient(to bottom, #ffffff, var(--primary-teal));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(0, 255, 210, 0.5));
 }
 
 .year-text {
     color: var(--primary-pink);
-    text-shadow: 0 0 20px var(--primary-pink);
+    text-shadow: 0 0 20px var(--primary-pink), 0 0 40px var(--primary-pink);
+    margin-left: -10px;
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
 }
 
 .logo-glow {
