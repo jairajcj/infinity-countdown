@@ -10,16 +10,20 @@ const timer = setInterval(() => {
         // Phase 1: Counting down to the start of sales
         targetDate = saleStart;
         phaseText = "TICKET SALES START IN";
+        document.querySelector('h2.event-title').innerText = "HAPPY HOURS!";
+        document.querySelector('h3.event-title').innerText = "EARLY BIRD PASSES!";
     } else if (now < saleEnd) {
         // Phase 2: Sales are live, counting down to the end
         targetDate = saleEnd;
-        phaseText = "HAPPY HOURS END IN";
-        document.querySelector('h2.event-title').innerText = "SALES ARE LIVE!";
+        phaseText = "TICKETS ARE LIVE!";
+        document.querySelector('h2.event-title').innerText = "HAPPY HOURS END IN";
+        document.querySelector('h3.event-title').innerText = "GRAB YOUR PASSES NOW!";
     } else {
         // Phase 3: Sales have ended
         clearInterval(timer);
         document.querySelector('h1.event-title').innerText = "TICKET SALES CLOSED";
-        document.querySelector('h2.event-title').innerText = "SEE YOU AT THE LAUNCH!";
+        document.querySelector('h2.event-title').innerText = "SOLD OUT!";
+        document.querySelector('h3.event-title').innerText = "SEE YOU AT THE LAUNCH!";
         document.getElementById('countdown').innerHTML = "<div class='time-block' style='width: 100%'><span class='time-number'>SOLD OUT</span></div>";
         return;
     }
