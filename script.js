@@ -1,5 +1,5 @@
 // Set the launch date (Infinity '26)
-const launchDate = new Date('May 1, 2026 18:00:00').getTime();
+const launchDate = new Date('February 25, 2026 21:15:00').getTime();
 
 // Update the countdown every 1 second
 const timer = setInterval(() => {
