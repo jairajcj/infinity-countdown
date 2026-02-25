@@ -1,29 +1,41 @@
-// Set the launch date (Infinity '26)
-const launchDate = new Date('February 25, 2026 21:15:00').getTime();
+// Set the launch dates for today (Feb 25, 2026)
+const saleStart = new Date('February 25, 2026 19:15:00').getTime();
+const saleEnd = new Date('February 25, 2026 21:15:00').getTime();
 
-// Update the countdown every 1 second
 const timer = setInterval(() => {
     const now = new Date().getTime();
-    const distance = launchDate - now;
+    let targetDate, phaseText;
 
-    // Time calculations
+    if (now < saleStart) {
+        // Phase 1: Counting down to the start of sales
+        targetDate = saleStart;
+        phaseText = "TICKET SALES START IN";
+    } else if (now < saleEnd) {
+        // Phase 2: Sales are live, counting down to the end
+        targetDate = saleEnd;
+        phaseText = "HAPPY HOURS END IN";
+        document.querySelector('h2.event-title').innerText = "SALES ARE LIVE!";
+    } else {
+        // Phase 3: Sales have ended
+        clearInterval(timer);
+        document.querySelector('h1.event-title').innerText = "TICKET SALES CLOSED";
+        document.querySelector('h2.event-title').innerText = "SEE YOU AT THE LAUNCH!";
+        document.getElementById('countdown').innerHTML = "<div class='time-block' style='width: 100%'><span class='time-number'>SOLD OUT</span></div>";
+        return;
+    }
+
+    const distance = targetDate - now;
+    document.querySelector('h1.event-title').innerText = phaseText;
+
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Output the results
     document.getElementById('days').innerText = days.toString().padStart(2, '0');
     document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
     document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
     document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
-
-    // If the countdown is over
-    if (distance < 0) {
-        clearInterval(timer);
-        document.querySelector('.timer-section h1').innerText = "THE EVENT HAS LAUNCHED!";
-        document.getElementById('countdown').innerHTML = "<div class='time-block' style='width: 100%'><span class='time-number'>LIVE NOW</span></div>";
-    }
 }, 1000);
 
 // Initialize Particles.js
