@@ -102,7 +102,7 @@ body {
 }
 
 .logo-glow {
-    animation: glowPulse 3s infinite alternate;
+    /* Static - no animation */
 }
 
 @keyframes glowPulse {
