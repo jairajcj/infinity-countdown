@@ -50,6 +50,22 @@ body {
 /* Logo Styles */
 .logo-container {
     animation: fadeInDown 1.5s ease-out;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container::before {
+    content: '';
+    position: absolute;
+    width: 650px;
+    height: 350px;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 40%, transparent 75%);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+    filter: blur(20px);
 }
 
 #main-logo {
