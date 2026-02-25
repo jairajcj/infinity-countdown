@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity '26 | The Launch</title>
+    <meta name="description"
+        content="Countdown to Infinity '26 - The Flagship Event Launch. Stay tuned for the ultimate experience.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <main class="container">
+        <header class="logo-container">
+            <img src="logo.png" alt="Infinity '26 Logo" id="main-logo" class="logo-glow"
+                onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block'">
+            <div id="logo-fallback" class="fallback-logo" style="display: none;">
+                <span class="infinity-text">INFINITY</span>
+                <span class="year-text">'26</span>
+            </div>
+        </header>
+
+        <section class="timer-section">
+            <h1 class="event-title">THE GRAND LAUNCH</h1>
+            <div id="countdown" class="countdown-grid">
+                <div class="time-block">
+                    <span id="days" class="time-number">00</span>
+                    <span class="time-label">DAYS</span>
+                </div>
+                <div class="time-block">
+                    <span id="hours" class="time-number">00</span>
+                    <span class="time-label">HOURS</span>
+                </div>
+                <div class="time-block">
+                    <span id="minutes" class="time-number">00</span>
+                    <span class="time-label">MINS</span>
+                </div>
+                <div class="time-block">
+                    <span id="seconds" class="time-number">00</span>
+                    <span class="time-label">SECS</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <p class="tagline">Prepare for something extraordinary.</p>
+            <div class="newsletter">
+                <input type="email" placeholder="Enter your email for updates" id="email-input">
+                <button id="notify-btn" class="glass-btn">NOTIFY ME</button>
+            </div>
+        </section>
+
+        <footer>
+            <div class="social-links">
+                <a href="#" class="social-icon">Instagram</a>
+                <a href="#" class="social-icon">Twitter</a>
+                <a href="#" class="social-icon">Discord</a>
+            </div>
+            <p>&copy; 2025 Infinity '26. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
